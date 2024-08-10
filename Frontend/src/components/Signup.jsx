@@ -21,7 +21,7 @@ function Signup() {
       password: data.password,
     };
     await axios
-    await axios.post("https://book-store-backend-mwp3.onrender.com/user/signup", userInfo)
+    await axios.post("http://localhost:4001/user/signup", userInfo)
       .then((res) => {
         console.log(res.data);
         if (res.data) {
@@ -109,15 +109,7 @@ function Signup() {
                 </button>
                 <p className="text-xl">
                   Have account?{" "}
-                  <button
-                    className="underline text-blue-500 cursor-pointer"
-                    onClick={() =>
-                      document.getElementById("my_modal_3").showModal()
-                    }
-                  >
-                    Login
-                  </button>{" "}
-                  <Login />
+                 
                 </p>
               </div>
             </form>
