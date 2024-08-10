@@ -12,25 +12,10 @@ const app = express();
 
 // new 
 // Configure CORS
-const allowedOrigins = ['https://book-store-frontend-d3fu.onrender.com'];
-
-app.use(
-  cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
-        // Allow request from the allowed origins
-        callback(null, true);
-      } else {
-        // Reject request from not allowed origins
-        callback(new Error('Not allowed by CORS'));
-      }
-    },
-    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    credentials: true
-  })
-);
-
-
+// Allow requests from your frontend domain
+app.use(cors({
+  origin: 'https://book-store-frontend-d3fu.onrender.com'
+}));
 // new
 
 
